@@ -141,7 +141,7 @@
 
 		function onGoInsert() {
 
-			window.location.href = 'http://localhost/miweb/altaResidencias.php'; // Vamos a la página de insercciones.
+			window.location.href = 'altaResidencias.php'; // Vamos a la página de insercciones.
 		}
 
 		function onModify(row) {
@@ -168,7 +168,7 @@
 			if( e.checked ) {
 				deleteArray.push(e.value); // Lo colocamos en el Array
 			} else {
-				deleteArray.splice(deleteArray.indexOf(e.value), 1); // Eliminamos en el índice donde se encuentre 1 elemento
+				deleteArray.splice(deleteArray.indexOf(e.value), 1); // Eliminamos en el índice donde se encuentre 1 elemento, es decir, sólo ese elemento.
 			}
 		}
 
@@ -179,6 +179,10 @@
 
 			   if( deleteArray.length <= 0 ) {
 			   		alert("No se ha seleccionado ningún elemento");
+			   		return;
+			   }
+
+			   if( !confirm("¿Seguro que quiere elmininar los elementos seleccionados?")) {
 			   		return;
 			   }
 

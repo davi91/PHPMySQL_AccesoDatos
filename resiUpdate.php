@@ -24,7 +24,7 @@
 	}
 
 
-	// Una vez cargados los datos empezamos a insertarlos en la base de datos
+	// Una vez cargados los datos empezamos a insertarlos en la base de datos. Diferenciamos entre ejecutar y modificar con esta variable
 	if( isset($_REQUEST["subInfo"])) {
 		$datos = $residb->prepare("update residencias set nomResidencia=:nombre, codUniversidad=:uni, precioMensual=:precio, comedor=:comedor where codResidencia=:resi");
 		$datos->bindValue(":resi", $_REQUEST["subInfo"] );
@@ -43,7 +43,7 @@
 		$datos = null;
 		echo "<script type='text/javascript'>
 					alert('Error la insertar los datos');
-				    window.location.replace('http://localhost/miweb/residencias.php');
+				    window.location.replace('residencias.php');
 			</script>";
 
 	} else {
@@ -53,10 +53,10 @@
 			echo "<script type='text/javascript'>
 						alert('Datos insertados correctamente');
 						if( !confirm('¿ Desea introducir algún otro dato ?')) {
-							window.location.replace('http://localhost/miweb/residencias.php');
+							window.location.replace('residencias.php');
 						}
 						else {
-					   	 	window.location.replace('http://localhost/miweb/altaResidencias.php');
+					   	 	window.location.replace('altaResidencias.php');
 					   	}
 				</script>";
 		} else { // En caso contrario, simplemente vamos a la página principal

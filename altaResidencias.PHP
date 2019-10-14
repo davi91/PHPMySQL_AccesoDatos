@@ -20,9 +20,9 @@
 
 				// Si es una modficación, ya ponemos los campos especificados
 				if( !isset( $_REQUEST["resi"]))
-					echo '<label>Nombre residencia: <input type="text" name="NombreResi" placeholder="Nombre residencia"><br><br></label>';
+					echo '<label>Nombre residencia: <input type="text" name="NombreResi" placeholder="Nombre residencia"><br><br></label>'; // Al insertar
 				else
-					echo '<label>Nombre residencia: <input type="text" name="NombreResi" value='.$_REQUEST["resi"].'><br><br></label>';
+					echo '<label>Nombre residencia: <input type="text" name="NombreResi" value='.$_REQUEST["resi"].'><br><br></label>'; // Al modificar
 			?>
 
 			Universidad: <select name="uni">
@@ -43,7 +43,7 @@
 						if( $id != $row["codUniversidad"]) {
 							echo "<option value=".$row["codUniversidad"].">".$row["nomUniversidad"]."</option>";
 						} else {
-							echo "<option value=".$row["codUniversidad"]." selected>".$row["nomUniversidad"]."</option>"; // Only one will be selected
+							echo "<option value=".$row["codUniversidad"]." selected>".$row["nomUniversidad"]."</option>"; // Sólo uno será seleccionado
 						}
 
 						$i++;
@@ -56,14 +56,14 @@
 			
 			<?php 
 
-				if( isset($_REQUEST["prec"])) {
+				if( isset($_REQUEST["prec"])) { // El precio
 					echo '<label>Precio: <input type="number" name="precio" min="900" value='.$_REQUEST["prec"].'><br><br></label>';
 				} else {
-					echo '<label>Precio: <input type="number" name="precio" min="900" value=900><br><br></label>';
+					echo '<label>Precio: <input type="number" name="precio" min="900" value=900><br><br></label>'; // Si no está establecido
 				}
 
-				if( isset($_REQUEST["com"]) && $_REQUEST["com"] == 1) {
-					echo '<label>Comedor: <input type="checkbox" name="comedor" checked><br><br></label>';
+				if( isset($_REQUEST["com"]) && $_REQUEST["com"] == 1) { // Comedor
+					echo '<label>Comedor: <input type="checkbox" name="comedor" checked><br><br></label>'; // En caso de que esté seleccionado
 				} else {
 					echo '<label>Comedor: <input type="checkbox" name="comedor"><br><br></label>';
 				}
@@ -90,8 +90,8 @@
 				
 			function goBack() {
 
-				window.location.replace('http://localhost/miweb/residencias.php'); // Esto es para que no se refleje en el 'back' del navegador
-				// En caso contrario, usaríamos window.loaction.hrefe
+				window.location.replace('residencias.php'); // Esto es para que no se refleje en el 'back' del navegador
+				// En caso contrario, usaríamos window.loaction.href
 			}
 
 			function altaProc() {

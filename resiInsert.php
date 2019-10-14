@@ -45,7 +45,7 @@
 		$datos = null;
 		echo "<script type='text/javascript'>
 					alert('La universidad introducida no existe');
-				    window.location.replace('http://localhost/miweb/residencias.php');
+				    window.location.replace('residencias.php');
 			</script>";
 	}
 
@@ -53,7 +53,7 @@
 		$datos = null;
 		echo "<script type='text/javascript'>
 					alert('No se pudo insertar la residencia');
-				    window.location.replace('http://localhost/miweb/residencias.php');
+				    window.location.replace('residencias.php');
 			</script>";
 	}
 
@@ -62,10 +62,10 @@
 		echo "<script type='text/javascript'>
 					alert('Los datos se han introducido correctamente');
 					if( !confirm('¿ Desea introducir algún otro dato ?')) {
-						window.location.replace('http://localhost/miweb/residencias.php');
+						window.location.replace('residencias.php');
 					}
 					else {
-				   	 	window.location.replace('http://localhost/miweb/altaResidencias.php');
+				   	 	window.location.replace('altaResidencias.php');
 				   	}
 			</script>";
 	}
